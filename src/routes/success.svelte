@@ -6,8 +6,8 @@
     const account = new Account(client);
 
     client
-        .setEndpoint('http://localhost/v1') // Your API Endpoint
-        .setProject('62d75e25ebbe8021f42f') // Your project ID
+        .setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT) // Your API Endpoint
+        .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID) // Your project ID
     ;
 
     let name = "";
