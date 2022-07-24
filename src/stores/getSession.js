@@ -12,3 +12,18 @@ const client = new Client();
     ;
 
 export let session = writable({});
+
+export let loggedIn = writable(false);
+
+const getSession = () => { account.getSession('current')
+    .then(function (response) {
+        console.log(response); // Success
+        session.set(response);
+        loggedIn.set(true);
+    }, function (error) {
+        console.log(error); // Failure
+        return error;
+    });
+}
+
+getSession();
